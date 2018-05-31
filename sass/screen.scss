@@ -1,0 +1,263 @@
+@import "compass/reset";
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Tauri);
+
+//variables
+//element color
+$metal:#939393;
+$alkali-metal:#98AD2C;
+$alkali-earth-metal:#44B981;
+$transition-metal:#4BB0FD;
+$lanthoid:#D3C100;
+$actinoid:#E09D00;
+$metalloid:#D33636;
+
+$non-metal:#6D828A;
+$noble-gas: #6767BA;
+$hologen: #A1823B;
+$block-color: transparent;
+
+
+//background gradients
+@mixin non-metal-grad(){
+	@include background-image(linear-gradient(left top, lighten($non-metal, 20%), darken($non-metal,15%))); 
+}
+
+@mixin noble-gas-grad(){
+	@include background-image(linear-gradient(left top, lighten($noble-gas, 20%), darken($noble-gas,15%))); 
+}
+
+@mixin halogen-grad() {
+    @include background-image(linear-gradient(left top, lighten($hologen, 20%), darken($hologen, 15%)));
+}
+
+@mixin alkali-metal-grad() {
+    @include background-image(linear-gradient(left top, lighten($alkali-metal,20%), darken($alkali-metal,15%)));
+}
+
+@mixin alkali-earth-metal-grad() {
+    @include background-image(linear-gradient(left top, lighten($alkali-earth-metal, 20%), darken($alkali-earth-metal, 15%)));
+}
+
+@mixin metalloid-grad() {
+    @include background-image(linear-gradient(left top, lighten($metalloid, 20%), darken($metalloid, 15%)));
+}
+
+@mixin transitional-metal-grad() {
+    @include background-image(linear-gradient(left top, lighten($transition-metal, 20%), darken($transition-metal, 25%)));
+}
+
+@mixin lanthoid-grad(){
+	@include background-image(linear-gradient(left top, lighten($lanthoid, 20%), darken($lanthoid,15%))); 
+}
+
+@mixin actinoid-grad() {
+    @include background-image(linear-gradient(left top, lighten($actinoid, 20%), darken($actinoid,15%)));
+}
+
+
+//size
+$element-size: 55px;
+html {
+    min-height: 100%;
+    @include background-image(linear-gradient(#555, #222)); 
+	background-repeat: no-repeat;
+}
+
+body {
+    font-size: 100%;
+    font-family: helvetica, arial, sans-serif;
+}
+
+#top_part h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Tauri', sans-serif;
+    letter-spacing: -.01em;
+    font-size: 2em;
+    margin-top: 30px;
+    color: #eee;
+    text-transform: lowcase;
+    text-shadow: 1 1 0 #333, 2px 2px 0 #999;
+}
+h1 {
+    margin-bottom: 5%;
+}
+
+
+
+#main_wrapp {
+    width: 990px;
+    margin: 0 auto 30px auto;
+    height: 600px;
+    position: relative;
+    
+}
+
+[class^="element-"] {
+    position: relative;
+    z-index: 1;
+    color: #eee;
+    @include box-sizing(border-box);
+    width: $element-size;
+    height: $element-size;
+    font-size: 1em;
+    display: block;
+    float: left;
+    opacity: 0.8;
+    border-radius: 10%;
+    
+    
+}
+[class^="element-"]:hover{
+    z-index: 100;
+    -webkit-transform: scale(1.1);
+   -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 1;
+    transform: Hover;
+    border-radius: 10%; 
+   
+}
+
+
+
+  strong{
+   font-size:1.8em;
+   display: block;
+   font-weight: bold;
+   text-shadow:0 1px 0 rgba(255,255,255,.2);
+   text-align: center;
+   margin-top: 1px;
+   background: rgba(0,0,0,.05);
+     
+}
+
+.element-block-full {
+    display: block;
+    height: $element-size;
+    width: 100%;
+}
+
+.element-lanthoid-log strong{
+    font-size:1em;
+}
+
+.element-actinoid-log strong{
+     font-size:1em;
+}
+
+ i {
+    padding: 4px;
+    display: block;
+    font-size: .7em;
+    text-shadow:0 1px 0 rgba(255,255,255,.2);
+    
+}
+
+.element-non-metal {
+    color:darken($non-metal,35%);
+    @include non-metal-grad();
+    &:hover {
+         color:darken($non-metal,50%);
+        
+    }
+}
+
+.element-noble-gas {
+    color: darken($noble-gas,35%);
+    @include noble-gas-grad();
+    &:hover {
+         color:darken($noble-gas,50%);
+    }
+}
+
+.element-halogen {
+    color: darken($hologen,30%);
+    @include halogen-grad();
+    &:hover {
+         color:darken($hologen,50%);
+    }
+}
+
+.element-alkali-metal {
+    color: darken($alkali-metal,30%);
+    @include alkali-metal-grad();
+    &:hover {
+         color:darken($alkali-metal,50%);
+    }
+}
+
+.element-alkali-earth-metal {
+    color: darken($alkali-earth-metal,35%);
+    @include alkali-earth-metal-grad();
+    &:hover {
+         color:darken($alkali-earth-metal,50%);
+    }
+}
+
+.element-metalloid {
+    color: darken($metalloid, 35%);
+    @include metalloid-grad();
+    &:hover {
+         color:darken($metalloid,50%);
+    }
+}
+
+.element-transition-metal {
+    color: darken($transition-metal, 45%);
+    @include transitional-metal-grad();
+    &:hover {
+         color:darken($transition-metal,70%);
+    }
+}
+
+.element-lanthoid-log{
+    color: darken($lanthoid,30%);
+    @include lanthoid-grad();
+    &:hover {
+         color:darken($lanthoid,50%);
+    }
+	}
+
+.element-actinoid-log {
+    color: darken($actinoid, 30%);
+    @include actinoid-grad();
+    &:hover {
+         color:darken($actinoid,50%);
+    }
+}
+
+.element-lanthoid {
+    color: darken($lanthoid,30%);
+    @include lanthoid-grad();
+    &:hover {
+         color:darken($lanthoid,50%);
+    }
+}
+
+.element-actinoid {
+    color: darken($actinoid, 30%);
+    @include actinoid-grad();
+    &:hover {
+         color:darken($actinoid,50%);
+    }
+}
+
+@media screen and (max-width:989px) {
+	#main_wrapp{
+		width: 90%;
+		.element-block{
+			display: none;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
